@@ -2175,151 +2175,117 @@ const end =
                     0xB71C1C,
 
 
-                fields: [
+fields: [
 
-                    {
-                        name:
-                            "👨‍🚒 Kierujący działaniami ratowniczymi",
+    {
+        name: "👨‍🚒 KIERUJĄCY DZIAŁANIAMI RATOWNICZYMI",
+        value: karta.kierujacyDzialaniami || "—",
+        inline: false
+    },
 
-                        value:
-                            karta.kierujacyDzialaniami ||
-                            "—",
+    {
+        name: "📋 WYPEŁNIA KZ Z UPRAWNIENIAMI",
+        value: karta.wypelniaKZ || "—",
+        inline: false
+    },
 
-                        inline:
-                            false
-                    },
+    {
+        name: "🔥 KATEGORIA ZDARZENIA",
+        value: karta.kategoriaZdarzenia || "—",
+        inline: false
+    },
 
+    {
+        name: "📊 WIELKOŚĆ ZDARZENIA",
+        value: karta.wielkoscZdarzenia || "—",
+        inline: false
+    },
 
-                    {
-                        name:
-                            "📋 Wypełnia KZ z uprawnieniami",
+    {
+        name: "\u200B",
+        value: "\u200B",
+        inline: false
+    },
 
-                        value:
-                            karta.wypelniaKZ ||
-                            "—",
+    {
+        name: "📍 LOKALIZACJA ZDARZENIA",
+        value: karta.lokalizacja || "—",
+        inline: false
+    },
 
-                        inline:
-                            true
-                    },
+    {
+        name: "\u200B",
+        value: "\u200B",
+        inline: false
+    },
 
+    {
+        name: "🚒 OBSADA ZASTĘPÓW",
+        value: unitsText.length > 1024
+            ? unitsText.substring(0, 1020) + "..."
+            : unitsText,
+        inline: false
+    },
 
-                    {
-                        name:
-                            "🔥 Kategoria zdarzenia",
+    {
+        name: "\u200B",
+        value: "\u200B",
+        inline: false
+    },
 
-                        value:
-                            karta.kategoriaZdarzenia ||
-                            "—",
+    {
+        name: "🚨 SIŁY I ŚRODKI",
+        value: resourcesText.length > 1024
+            ? resourcesText.substring(0, 1020) + "..."
+            : resourcesText,
+        inline: false
+    },
 
-                        inline:
-                            true
-                    },
+    {
+        name: "\u200B",
+        value: "\u200B",
+        inline: false
+    },
 
+    {
+        name: "🕐 PRZYBYCIE NA MIEJSCE",
+        value: arrival,
+        inline: false
+    },
 
-                    {
-                        name:
-                            "📊 Wielkość zdarzenia",
+    {
+        name: "🏁 ZAKOŃCZENIE DZIAŁAŃ",
+        value: end,
+        inline: false
+    },
 
-                        value:
-                            karta.wielkoscZdarzenia ||
-                            "—",
+    {
+        name: "\u200B",
+        value: "\u200B",
+        inline: false
+    },
 
-                        inline:
-                            true
-                    },
+    {
+        name: "📝 OPIS ZDARZENIA",
+        value: description.length > 1024
+            ? description.substring(0, 1020) + "..."
+            : description,
+        inline: false
+    },
 
+    {
+        name: "\u200B",
+        value: "\u200B",
+        inline: false
+    },
 
-                    {
-                        name:
-                            "📍 Lokalizacja",
+    {
+        name: "✍️ SPORZĄDZIŁ",
+        value: author,
+        inline: false
+    }
 
-                        value:
-                            karta.lokalizacja ||
-                            "—",
-
-                        inline:
-                            false
-                    },
-
-
-                    {
-                        name:
-                            "🚒 Obsada zastępów",
-
-                        value:
-                            unitsText.length > 1024
-                                ? unitsText.substring(0, 1020) + "..."
-                                : unitsText,
-
-                        inline:
-                            false
-                    },
-
-
-                    {
-                        name:
-                            "🚨 Siły i środki",
-
-                        value:
-                            resourcesText.length > 1024
-                                ? resourcesText.substring(0, 1020) + "..."
-                                : resourcesText,
-
-                        inline:
-                            false
-                    },
-
-
-                    {
-                        name:
-                            "🕐 Przybycie na miejsce",
-
-                        value:
-                            arrival,
-
-                        inline:
-                            true
-                    },
-
-
-                    {
-                        name:
-                            "🏁 Zakończenie działań",
-
-                        value:
-                            end,
-
-                        inline:
-                            true
-                    },
-
-
-                    {
-                        name:
-                            "📝 Opis zdarzenia",
-
-                        value:
-                            description.length > 1024
-                                ? description.substring(0, 1020) + "..."
-                                : description,
-
-                        inline:
-                            false
-                    },
-
-
-                    {
-                        name:
-                            "✍️ Sporządził",
-
-                        value:
-                            author,
-
-                        inline:
-                            false
-                    }
-
-                ],
+],
 
 
                 footer: {
