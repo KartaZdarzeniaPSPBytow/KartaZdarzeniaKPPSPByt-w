@@ -2105,17 +2105,32 @@ async function sendIZZ() {
        PRZEBIEG DZIAŁAŃ
     ========================================= */
 
-    const arrival =
+function formatDiscordDateTime(value) {
+
+    if (!value) {
+        return "—";
+    }
+
+    const [date, time] = value.split("T");
+
+    if (!date || !time) {
+        return value;
+    }
+
+    const [year, month, day] = date.split("-");
+
+    return `${day}.${month}.${year} ${time}`;
+}
+
+   const arrival =
+    formatDiscordDateTime(
         karta.przybycieNaMiejsce
-            ? karta.przybycieNaMiejsce
-            : "—";
+    );
 
-
-    const end =
+const end =
+    formatDiscordDateTime(
         karta.zakonczenieDzialan
-            ? karta.zakonczenieDzialan
-            : "—";
-
+    );
 
     /* =========================================
        OPIS
