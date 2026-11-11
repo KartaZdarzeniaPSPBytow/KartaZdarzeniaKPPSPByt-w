@@ -1085,18 +1085,20 @@ function createPersonPicker() {
     );
 
 
-    input.addEventListener(
-        "input",
-        function() {
+input.addEventListener(
+    "input",
+    function() {
 
-            hidden.value = "";
+        // Pozwala wpisać osobę ręcznie,
+        // nawet jeśli nie ma jej na liście.
+        hidden.value = input.value.trim();
 
-            showOptions(
-                input.value
-            );
+        showOptions(
+            input.value
+        );
 
-        }
-    );
+    }
+);
 
 
     input.addEventListener(
@@ -1149,16 +1151,25 @@ function getPersonFromPicker(container) {
         return "";
     }
 
-    const hidden =
-        container.querySelector(
-            ".person-value"
-        );
+    const hidden = container.querySelector(
+        ".person-value"
+    );
 
-    if (!hidden) {
-        return "";
+    const input = container.querySelector(
+        ".person-input"
+    );
+
+    // Najpierw pobieramy wybraną osobę.
+    // Jeśli jej nie wybrano, pobieramy wpisany tekst.
+    if (hidden && hidden.value.trim() !== "") {
+        return hidden.value.trim();
     }
 
-    return hidden.value;
+    if (input) {
+        return input.value.trim();
+    }
+
+    return "";
 }
 
 
